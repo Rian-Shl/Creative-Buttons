@@ -7,6 +7,7 @@ body {
     gap: 1rem;
     max-height: 100vh;
     flex-wrap: wrap;
+    
 }
 
 /*  Rotating Button */
@@ -559,7 +560,7 @@ a.border-swapping:after {
     border-top: 2px solid #20caff;
     border-bottom: 2px solid #ff7675;
     transition: all 0.8s;
-
+    transition-delay: 0.2s;
 }
 
 a.border-swapping:hover:before{
@@ -568,4 +569,129 @@ a.border-swapping:hover:before{
 
 a.border-swapping:hover:after{
     transform: rotateX(180deg);
+}
+
+/* border-growing */
+button.border-growing {
+    background: transparent;
+    border: none;
+    position: relative;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1rem;
+    padding: 1rem 2rem;
+    letter-spacing: 1px;
+    overflow: hidden;
+    cursor: pointer;
+}
+button.border-growing:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background-color: #588796;
+    transition: all 0.3s;
+}
+
+button.border-growing:hover:before{
+    left: 0;
+}
+button.border-growing:after{
+    content: '';
+    position: absolute;
+    top: calc(100% - 2px);
+    left: 100%;
+    width: 100%;
+    height: 2px;
+    background-color: #588796;
+    transition: all 0.3s;
+}
+button.border-growing:hover:after{
+    left: 0;
+}
+
+button.border-growing span:before{
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background-color: #588796;
+    transition: all 0.3s;
+}
+
+button.border-growing:hover span:before {
+    top: 0;
+}
+button.border-growing span:after{
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: calc(100% - 2px);
+    width: 2px;
+    height: 100%;
+    background-color: #588796;
+    transition: all 0.3s;
+}
+button.border-growing:hover span:after{
+    top: 0;
+}
+
+/* wavy */
+a.wavy {
+    text-decoration: none;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-family: sans-serif;
+    line-height: 1rem;
+    color: #00aeff;
+    letter-spacing: 1px;
+    border: 2px solid #00aeff; 
+    text-transform: uppercase;
+    position: relative;
+    transition: all 0.5s;
+    transition-delay: 0.3s;
+    overflow: hidden;
+}
+
+a.wavy div.wave {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: calc(100% + 22px);
+    background-color: #00aeff;
+    transition: all 1s;
+    z-index: -1;
+
+}
+a.wavy div.wave:before {
+    content: '';
+    position: absolute;
+    top: -22px;
+    left: 0;
+    width: 100%;
+    height: 22px;
+    background: url('images/wave.png');
+    animation: wavy 0.5s linear infinite;
+}
+a.wavy:hover div.wave{
+    top: 0;
+}
+
+a.wavy:hover {
+    color: #fff;
+}
+
+@keyframes wavy {
+    0% {
+        background-position-x: 0;
+    }
+    100% {
+        background-position-x: 118px;
+    }
 }
