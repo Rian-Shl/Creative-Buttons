@@ -746,3 +746,47 @@ a.two-skewed:hover:after {
     left: 0;
     top:0;
 }
+
+/* pulsing */
+a.pulsing {
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 1rem;
+    font-family: sans-serif;
+    line-height: 1rem;
+    letter-spacing: 1px;
+    padding: 1rem 2rem;
+    background-color: #5b90b6;
+    color: #fff;
+    position: relative;
+    border-radius: 100px;
+    transition: all 0.2s;
+}
+
+a.pulsing:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #5b90b6;
+    border-radius: 100px;
+    transition: all 0.4s ;
+    z-index: -1;
+}
+
+a.pulsing:hover:before {
+    transform: scaleX(1.2) scaleY(1.4);
+    opacity: 0;
+}
+
+a.pulsing:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+a.pulsing:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
