@@ -4,7 +4,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 2rem;
+    gap: 5rem;
     flex-wrap: wrap;
     margin: 5rem;
     max-height: 50vh;
@@ -789,4 +789,95 @@ a.pulsing:hover {
 a.pulsing:active {
     transform: translateY(-1px);
     box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+
+/* four-lines */
+
+a.four-lines {
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 1rem;
+    font-family: sans-serif;
+    line-height: 1rem;
+    letter-spacing: 1px;
+    padding: 1rem 2rem;
+    background-color: transparent;
+    color: #1e9bff;
+    position: relative;
+    transition: all 0.2s;
+    border: 2px solid #1e9bff;
+    transition: all 0.3s;
+}
+
+a.four-lines:hover {
+    color: #333;
+    border: 2px solid transparent;
+}
+a.four-lines > span {
+    position: absolute;
+    background: #1e9bff;
+    box-shadow: 0 0 10px #1e9bff, 0 0 20px #1e9bff, 0 0 30px #1e9bff, 0 0 50px #1e9bff, 0 0 100px #1e9bff;
+}
+a.four-lines > span:nth-child(2n+1){
+    width: 40px;
+    height: 4px;
+}
+
+a.four-lines > span:nth-child(2n) {
+    height: 40px;
+    width: 4px;
+}
+
+/*  line 1 - horizontal */
+a.four-lines > span:nth-child(1){
+    top: calc(50% - 2px);
+    left: -50px;
+    transition: 0.3s ease-in-out;
+}
+
+a.four-lines:hover > span:nth-child(1){
+    left: 50px;
+    transform: scaleX(0);
+    transition-delay: 0s;
+}
+
+/*  line 3 - horizontal */
+a.four-lines > span:nth-child(3){
+    top: calc(50% - 2px);
+    right: -50px;
+    transition: 0.3s ease-in-out;
+}
+
+a.four-lines:hover > span:nth-child(3){
+    right: 50px;
+    transform: scaleX(0);
+    transition-delay: 0s;
+}
+
+/*  line 2 - vertical */
+a.four-lines > span:nth-child(2){
+    top: -50px;
+    right: 50%;
+    transition: 0.3s ease-in-out;
+}
+
+a.four-lines:hover > span:nth-child(2){
+    top: 0;
+    transform: scaleY(0);
+    transition-delay: 0s;
+
+}
+
+/*  line 4 - vertical */
+a.four-lines > span:nth-child(4){
+    bottom: -50px;
+    right: 50%;
+    transition: 0.3s ease-in-out;
+}
+
+a.four-lines:hover > span:nth-child(4){
+    bottom: 0;
+    transform: scaleY(0);
+    transition-delay: 0s;
+
 }
